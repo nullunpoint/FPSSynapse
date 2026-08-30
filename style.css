@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* テキスト選択を無効化*/
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+/* タイマーとスタートボタンの表示パネル */
+#control-panel {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+#timer {
+  font-size: 1.5vh;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 3px white;
+}
+
+#start-btn {
+    font-size: 1.5vh;
+    font-weight: bold;
+    color: black;
+    background-color: lightgray;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 3px gray;
+}
+
+#start-btn:hover {
+    background-color: lightgray;
+    cursor: default;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+/* 3x3のテーブル（共通設定） */
+.grid-3x3 {
+    position: absolute;
+    width: 15%;
+    height: 25%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.2vh;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    
+    outline: 1px;
+    outline-color: gray;
+}
+
+/* 各グリッドの配置 */
+#table-1 { top: 5%; left: 5%;}
+#table-2 { top: 5%; left: 80%;}
+#table-3 { top: 70%; left: 5%;}
+#table-4 { top: 70%; left: 80%;}
+
+/* 1つ1つのマス（数字） */
+.cell {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vh;
+    font-weight: bold;
+    border-radius: 5px;
+    outline: 1px;
+    outline-color: gray;
+    box-shadow: 5px 5px 3px gray;
+
+    /* カーソルを矢印のまま固定 */
+    cursor: default;
+
+    /* テキスト選択の防止 */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.cell:hover {
+    background-color: lightgray;
+    cursor: default;
+}
+/*
+.cell.clicked {
+    background-color: lightgray;
+    color: transparent;
+    cursor: default;
+}
+*/
+
+#center-target{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 5vw;
+    height: 7vh;
+    background-color: whitesmoke;
+    color: black;
+    font-size: 2vh;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gray;
+    cursor: default;
+    user-select: none;
+}
